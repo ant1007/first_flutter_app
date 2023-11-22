@@ -43,26 +43,27 @@ class MyApp extends StatelessWidget {
             ),
       }, */
       onGenerateRoute: (RouteSettings settings) {
-        return MaterialPageRoute(builder: (context) {
-          String routeName = settings.name ?? 'unknown';
-          switch (routeName) {
-            case '/':
-              return const MyHomePage(title: 'Flutter Demo Home Page');
-            case 'new_page':
-              return const NewRoute();
-            case 'echo':
-              return const EchoRoute();
-            case 'tip':
-              return TipRoute(
-                text: ModalRoute.of(context)?.settings.arguments.toString() ??
-                    '我是提示xxxx',
-              );
-            default:
-              return const MyHomePage(title: 'Flutter Demo Home Page');
-          }
-          // 如果访问的路由页需要登录，但当前未登录，则直接返回登录页路由，
-          // 引导用户登录；其他情况则正常打开路由。
-        });
+        return MaterialPageRoute(
+            settings: settings,
+            builder: (context) {
+              String routeName = settings.name ?? 'unknown';
+              switch (routeName) {
+                case '/':
+                  return const MyHomePage(title: 'Flutter Demo Home Page');
+                case 'new_page':
+                  return const NewRoute();
+                case 'echo':
+                  return const EchoRoute();
+                case 'tip':
+                  return TipRoute(
+                    text: settings.arguments.toString(),
+                  );
+                default:
+                  return const MyHomePage(title: 'Flutter Demo Home Page');
+              }
+              // 如果访问的路由页需要登录，但当前未登录，则直接返回登录页路由，
+              // 引导用户登录；其他情况则正常打开路由。
+            });
       },
     );
   }

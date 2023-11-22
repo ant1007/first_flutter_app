@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/log.dart';
 import 'package:flutter/material.dart';
 
 class CounterWidget extends StatefulWidget {
@@ -17,12 +18,12 @@ class _CounterWidgetState extends State<CounterWidget> {
     super.initState();
     // 初始化状态
     _counter = widget.initValue;
-    debugPrint("initState");
+    Log.d("initState");
   }
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("build");
+    Log.d("build");
     return Scaffold(
       body: Center(
         child: TextButton(
@@ -37,31 +38,31 @@ class _CounterWidgetState extends State<CounterWidget> {
   @override
   void didUpdateWidget(CounterWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    debugPrint("didUpdateWidget ");
+    Log.d("didUpdateWidget");
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    debugPrint("deactivate");
+    Log.d("deactivate");
   }
 
   @override
   void dispose() {
     super.dispose();
-    debugPrint("dispose");
+    Log.d("dispose");
   }
 
   @override
   void reassemble() {
     super.reassemble();
-    debugPrint("reassemble");
+    Log.d("reassemble");
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    debugPrint("didChangeDependencies");
+    Log.d("didChangeDependencies");
   }
 }
 

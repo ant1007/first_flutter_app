@@ -64,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text('open echo route')),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('tip', arguments: '我是提示');
+                    Navigator.of(context)
+                        .pushNamed('tip', arguments: '我是提示xxxx');
                   },
                   child: const Text('open tip route')),
             ],
