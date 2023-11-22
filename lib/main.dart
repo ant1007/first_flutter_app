@@ -8,10 +8,6 @@ import 'package:first_flutter_app/my_home_page.dart';
 import 'package:first_flutter_app/context_route.dart';
 import 'package:first_flutter_app/echo.dart';
 import 'package:first_flutter_app/new_route.dart';
-import 'package:first_flutter_app/parent_widget.dart';
-import 'package:first_flutter_app/parent_widget_c.dart';
-import 'package:first_flutter_app/router_test_route.dart';
-import 'package:first_flutter_app/tapbox_a.dart';
 import 'package:first_flutter_app/tip_route.dart';
 import 'package:flutter/material.dart';
 
